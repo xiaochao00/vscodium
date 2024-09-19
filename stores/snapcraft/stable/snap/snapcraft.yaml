@@ -32,10 +32,10 @@ parts:
       mkdir -p "${SNAPCRAFT_PART_INSTALL}/meta/gui"
       cp "${SNAPCRAFT_PART_INSTALL}/usr/share/codium/resources/app/resources/linux/code.png" "${SNAPCRAFT_PART_INSTALL}/meta/gui/codium.png"
       # Update paths
-      sed -i 's|Exec=/usr/share/codium/codium|Exec=codium --force-user-env|g' "${SNAPCRAFT_PART_INSTALL}/usr/share/applications/codium.desktop"
-      sed -i 's|Exec=/usr/share/codium/codium|Exec=codium --force-user-env|g' "${SNAPCRAFT_PART_INSTALL}/usr/share/applications/codium-url-handler.desktop"
-      sed -i 's|Icon=vscodium|Icon=${SNAP}/meta/gui/codium.png|g' "${SNAPCRAFT_PART_INSTALL}/usr/share/applications/codium.desktop"
-      sed -i 's|Icon=vscodium|Icon=${SNAP}/meta/gui/codium.png|g' "${SNAPCRAFT_PART_INSTALL}/usr/share/applications/codium-url-handler.desktop"
+      sed -i 's|Exec=/usr/share/codium/codium|Exec=codium --force-user-env|g' "${SNAPCRAFT_PART_INSTALL}/usr/share/applications/autocoder.desktop"
+      sed -i 's|Exec=/usr/share/codium/codium|Exec=codium --force-user-env|g' "${SNAPCRAFT_PART_INSTALL}/usr/share/applications/autocoder-url-handler.desktop"
+      sed -i 's|Icon=vscodium|Icon=${SNAP}/meta/gui/codium.png|g' "${SNAPCRAFT_PART_INSTALL}/usr/share/applications/autocoder.desktop"
+      sed -i 's|Icon=vscodium|Icon=${SNAP}/meta/gui/codium.png|g' "${SNAPCRAFT_PART_INSTALL}/usr/share/applications/autocoder-url-handler.desktop"
     build-packages:
       - wget
       - jq
@@ -94,9 +94,9 @@ parts:
 
 apps:
   codium:
-    command: electron-launch $SNAP/usr/share/codium/bin/codium --no-sandbox
-    desktop: usr/share/applications/codium.desktop
-    common-id: codium.desktop
+    command: electron-launch $SNAP/usr/share/autocoder/bin/autocoder --no-sandbox
+    desktop: usr/share/applications/autocoder.desktop
+    common-id: autocoder.desktop
 
   url-handler:
     command: electron-launch $SNAP/usr/share/codium/bin/codium --open-url --no-sandbox
