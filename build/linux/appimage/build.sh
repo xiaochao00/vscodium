@@ -33,7 +33,7 @@ if [[ "${VSCODE_ARCH}" == "x64" ]]; then
     sed -i 's|@@ICON@@|vscodium-insiders|g' recipe.yml
   else
     sed -i 's|@@NAME@@|VSCodium|g' recipe.yml
-    sed -i 's|@@APPNAME@@|codium|g' recipe.yml
+    sed -i 's|@@APPNAME@@|autocoder|g' recipe.yml
     sed -i 's|@@ICON@@|vscodium|g' recipe.yml
   fi
 
